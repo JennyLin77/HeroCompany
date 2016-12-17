@@ -9,9 +9,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 require('rxjs/add/operator/switchMap');
+var common_1 = require('@angular/common');
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var common_1 = require('@angular/common');
 var hero_service_1 = require('./hero.service');
 var HeroDetailComponent = (function () {
     function HeroDetailComponent(heroService, route, location) {
