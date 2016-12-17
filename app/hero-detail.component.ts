@@ -1,7 +1,8 @@
+import 'rxjs/add/operator/switchMap';
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
-import 'rxjs/add/operator/switchMap';
 
 import { Hero } from './hero';
 import { HeroService } from './hero.service';
@@ -30,5 +31,11 @@ export class HeroDetailComponent implements OnInit {
 
 	goBack(): void {
 		this.location.back();
+	}
+
+	//使用hero服务的update方法来持久化对英雄名字的修改，然后导航回前一个视图
+	save(): void {
+		this.heroService.update(this.hero)
+			.then(() => this.goBack());
 	}
 }
